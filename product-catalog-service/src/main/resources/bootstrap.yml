@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: product-catalog
+  cloud:
+    config:
+      uri: http://localhost:8888
+#  datasource:
+#    password: '12345'
+#    url: jdbc:postgresql://localhost:5432/wshoppingdb
+#    username: 'imad'
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: 'true'
+#    show-sql: 'true'
+  liquibase:
+    enabled: false
+    change-log: classpath:/db.changelog/changelog-master.xml
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#debug: true

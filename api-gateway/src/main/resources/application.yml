@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: productCatalogRoute
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/product-catalog-service/**
+        - id: orderServiceRoute
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/order-service/**
+        - id: cartServiceRoute
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/cart-service/**
+        - id: reviewsServiceRoute
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/reviews-service/**
+  application:
+    name: gateway-service
